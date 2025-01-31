@@ -11,16 +11,6 @@
             "caption": "Verbrauch"
         },
         {
-            "name": "TarifReststrom",
-            "type": "SelectVariable",
-            "caption": "TarifReststrom"
-        },
-        {
-            "name": "TarifSonne",
-            "type": "SelectVariable",
-            "caption": "TarifSonne"
-        },
-        {
             "name": "VerbrauchDurchschnitt",
             "type": "SelectVariable",
             "caption": "VerbrauchDurchschnitt"
