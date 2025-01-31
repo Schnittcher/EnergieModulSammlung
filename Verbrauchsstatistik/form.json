@@ -1,0 +1,115 @@
+{
+    "elements": [
+        {
+            "name": "Zählernummer",
+            "type": "SelectVariable",
+            "caption": "Zählernummer"
+        },
+        {
+            "name": "Verbrauch",
+            "type": "SelectVariable",
+            "caption": "Verbrauch"
+        },
+        {
+            "name": "TarifReststrom",
+            "type": "SelectVariable",
+            "caption": "TarifReststrom"
+        },
+        {
+            "name": "TarifSonne",
+            "type": "SelectVariable",
+            "caption": "TarifSonne"
+        },
+        {
+            "name": "VerbrauchDurchschnitt",
+            "type": "SelectVariable",
+            "caption": "VerbrauchDurchschnitt"
+        },
+        {
+            "name": "AbweichungProzentual",
+            "type": "SelectVariable",
+            "caption": "AbweichungProzentual"
+        },
+        {
+            "type": "Select",
+            "name": "LevelOfDetail",
+            "caption": "Level of Detail",
+            "options": [
+                {
+                    "caption": "Date",
+                    "value": 0
+                },
+                {
+                    "caption": "Time",
+                    "value": 1
+                },
+                {
+                    "caption": "Date/Time",
+                    "value": 2
+                }
+            ]
+        }
+    ],
+    "status": [
+        {
+            "code": 104,
+            "caption": "Es wurde mindestens eine Variable nicht selektiert.",
+            "icon": "inactive"
+        },
+        {
+            "code": 200,
+            "caption": "Mindestens eine selektierte Variable existiert nicht.",
+            "icon": "error"
+        },
+        {
+            "code": 201,
+            "caption": "Verbrauchsvariable wird nicht geloggt.",
+            "icon": "error"
+        },
+        {
+            "code": 202,
+            "caption": "Verbrauchsvariable muss als Zähler geloggt sein.",
+            "icon": "error"
+        },
+        {
+            "code": 203,
+            "caption": "Tarif Reststrom wird nicht geloggt.",
+            "icon": "error"
+        },
+        {
+            "code": 204,
+            "caption": "Tarif Reststrom muss als Zähler geloggt sein.",
+            "icon": "error"
+        },
+        {
+            "code": 205,
+            "caption": "Tarif Sonne wird nicht geloggt.",
+            "icon": "error"
+        },
+        {
+            "code": 206,
+            "caption": "Tarif Sonne muss als Zähler geloggt sein.",
+            "icon": "error"
+        },
+        {
+            "code": 207,
+            "caption": "Verbrauch Durchschnitt wird nicht geloggt.",
+            "icon": "error"
+        },
+        {
+            "code": 208,
+            "caption": "Verbrauch Durchschnitt muss als Zähler geloggt sein.",
+            "icon": "error"
+        },
+        {
+            "code": 209,
+            "caption": "Abweichung Prozentual wird nicht geloggt.",
+            "icon": "error"
+        },
+        {
+            "code": 210,
+            "caption": "Abweichung Prozentual muss als Standard geloggt sein.",
+            "icon": "error"
+        }
+    ]
+}

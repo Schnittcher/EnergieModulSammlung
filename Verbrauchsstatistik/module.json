@@ -1,0 +1,12 @@
+{
+    "id": "{F9AA54DA-9A0E-D455-17EB-8520E28D3DA1}",
+    "name": "Verbrauchsstatistik",
+    "type": 3,
+    "vendor": "Kai Schnittcher",
+    "aliases": [],
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "VER",
+    "url": "https://github.com/Schnittcher"
+}

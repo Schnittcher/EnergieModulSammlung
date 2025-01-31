@@ -1,0 +1,43 @@
+{
+    "translations": {
+        "de": {
+            "Active": "Aktiv",
+            "Appartment": "Wohnung",
+            "Notification Settings": "Benachrichtigungseinstellungen",
+            "Name": "Name",
+            "Password": "Passwort",
+            "Webfornt instance": "Webfront Instanz",
+            "Salutation": "Anrede",
+            "Contact partner": "Ansprechpartner",
+            "E-Mail address": "E-Mail Adresse",
+            "E-Mail adresses": "E-Mail Adressen",
+            "Day for report": "Tag für Bericht",
+            "Generate CSV report": "Generiere CSV Bericht",
+            "Generate PDF report": "Generiere PDF Bericht",
+            "Counter number": "Zählernummer",
+            "Type": "Typ",
+            "Instance ID": "Instanz ID",
+            "Counter electricity": "Stromzähler",
+            "Counter cold water": "Kaltwasser Zähler",
+            "Counter warm water": "Warmwasser Zähler",
+            "Counter Heat": "Heizungszähler",
+            "Report Timer end of the month": "Berichtstimer Ende des Monats",
+            "Report Timer middle of the month": "Berichtstimer Mitte des Monats",
+            "Monthly Report": "Monatlicher Report",
+            "Report Meter Reading": "Report Zählerstand",
+            "Error! - SMTP instance not set!": "Fehler! - SMTP-Instanz nicht gesetzt!",
+            "Renter E-Mail": "Mieter E-Mail",
+            "Consumption": "Verbrauch",
+            "Meter Reading": "Zählerstand",
+            "Send Report via E-Mail": "Sende Bericht per E-Mail",
+            "Start Date": "Startdatum",
+            "End Date": "Enddatum",
+            "Action": "Aktion",
+            "Report": "Bericht",
+            "Generate Report": "Generiere Bericht",
+            "Report for": "Bericht für",
+            "Report at the end of the month": "Bericht zur Ende des Monats",
+            "Report at the middle of the month": "Bericht am Mitte des Monat"
+        }
+    }
+}
