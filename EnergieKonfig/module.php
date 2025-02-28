@@ -40,13 +40,12 @@ class EnergieKonfig extends IPSModule {
         $Wohnungen = json_decode($this->ReadPropertyString('Wohnungen'),true);
 
         foreach ($Wohnungen as $Wohnung) {
-            if ($Wohnung['Name'] = $WohnungsID) {
+            if ($Wohnung['Name'] == $WohnungsID) {
                 $einzugsDatum = json_decode($Wohnung['Einzugsdatum'],true);
                 $timestampEinzug = strtotime($einzugsDatum['day'].'.'.$einzugsDatum['month'].'.'.$einzugsDatum['year']);
             }
         }
       
-        echo $WohnungsID;
         if ($timestampEinzug === false) {
             echo "Ungültiges Einzugsdatum";
             return;
