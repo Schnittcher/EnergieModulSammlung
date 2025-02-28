@@ -51,30 +51,12 @@ class EnergieKonfig extends IPSModule {
             return;
         }
         if ($timestampEinzug > $startDatum) {
-
-            try {
-                throw new Exception("Dies ist eine Exception ohne Stacktrace.");
-            } catch (Exception $e) {
-                echo "Fehler: " . $e->getMessage(); // Stacktrace wird nicht ausgegeben
-                exit;
-            }
-
-            //throw new NoStackTraceException("Das Statdatum muss vor dem Einzugsdatum ". date('d.m.Y', $timestampEinzug). ' liegen');
-            
-            $startDatum = $timestampEinzug;
-            $this->LogMessage('Anfrage von Energiedaten vor Einzug (StartDatum) ('.$WohnungsID.')', KL_WARNING);
+            throw new Exception("Das Statdatum muss vor dem Einzugsdatum ". date('d.m.Y', $timestampEinzug). ' liegen');           
+            exit;
         }
         if ($timestampEinzug > $endDatum) {
-            try {
-                throw new Exception("Dies ist eine Exception ohne Stacktrace.");
-            } catch (Exception $e) {
-                echo "Fehler: " . $e->getMessage(); // Stacktrace wird nicht ausgegeben
-                exit;
-            }
-
-            $endDatum = $timestampEinzug;
-            $this->LogMessage('Anfrage von Energiedaten vor Einzug (EndDatum) ('.$WohnungsID.')', KL_WARNING);
-            
+            throw new Exception("Das Statdatum muss vor dem Einzugsdatum ". date('d.m.Y', $timestampEinzug). ' liegen');
+            exit;           
         }
 
         IPS_LogMessage('einzug', date('d.m.Y H:i:s', $timestampEinzug));
