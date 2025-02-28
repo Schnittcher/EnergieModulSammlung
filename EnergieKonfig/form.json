@@ -1,0 +1,111 @@
+{
+    "elements": [
+        { "type": "SelectInstance", "name": "PropertyInstanceID", "caption": "Target" },
+        {
+            "type": "List",
+            "name": "Zaehler",
+            "columns": [
+                {
+                    "caption": "Name",
+                    "name": "Name",
+                    "width": "auto",
+                    "add": "",
+                    "edit": {
+                        "type": "ValidationTextBox"
+                    }
+                },
+                {
+                    "caption": "Zähler",
+                    "name": "Zähler",
+                    "width": "150px",
+                    "add": 0,
+                    "edit": {
+                        "type": "SelectVariable"
+                    }
+                }
+            ],
+            "add": true,
+            "delete": true,
+            "sort": {
+                "column": "Name",
+                "direction": "ascending"
+            }
+        },
+        {
+            "type": "List",
+            "name": "Wohnungen",
+            "columns": [
+                {
+                    "caption": "Name",
+                    "name": "Name",
+                    "width": "auto",
+                    "add": "",
+                    "edit": {
+                        "type": "ValidationTextBox"
+                    }
+                },
+                {
+                    "caption": "Stromzähler",
+                    "name": "Stromzaehler",
+                    "width": "150px",
+                    "add": 0,
+                    "edit": {
+                        "type": "SelectVariable"
+                    }
+                },
+                {
+                    "caption": "Kaltwasserzähler",
+                    "name": "Kaltwasserzaehler",
+                    "width": "250px",
+                    "add": 0,
+                    "edit": {
+                        "type": "SelectVariable"
+                    }
+                },
+                {
+                    "caption": "Warmwasserzähler",
+                    "name": "Warmwasserzaehler",
+                    "width": "250px",
+                    "add": 0,
+                    "edit": {
+                        "type": "SelectVariable"
+                    }
+                },
+                {
+                    "caption": "Wärmemengenzähler",
+                    "name": "Waermemengenzaehler",
+                    "width": "250px",
+                    "add": 0,
+                    "edit": {
+                        "type": "SelectVariable"
+                    }
+                },
+                {
+                    "caption": "Quadratmeter",
+                    "name": "Quadratmeter",
+                    "width": "150px",
+                    "add": 0,
+                    "edit": {
+                        "type": "NumberSpinner",
+                        "digits": 2
+                    }
+                },
+                {
+                    "caption": "Einzugsdatum",
+                    "name": "Einzugsdatum",
+                    "width": "250px",
+                    "add": "{}",
+                    "edit": {
+                        "type": "SelectDate"
+                    }
+                }
+            ],
+            "add": true,
+            "delete": true,
+            "sort": {
+                "column": "Name",
+                "direction": "ascending"
+            }
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "id": "{3BE56E7A-C2AC-91A9-0A0D-397C4345B065}",
+    "name": "EnergieKonfig",
+    "type": 2,
+    "vendor": "Kai Schnittcher",
+    "aliases": [],
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "VER",
+    "url": "https://github.com/Schnittcher"
+}
