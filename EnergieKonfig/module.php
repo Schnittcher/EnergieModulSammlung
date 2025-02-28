@@ -51,12 +51,21 @@ class EnergieKonfig extends IPSModule {
             return;
         }
         if ($timestampEinzug > $startDatum) {
-            throw new Exception("Das Statdatum muss vor dem Einzugsdatum ". date('d.m.Y', $timestampEinzug). ' liegen');           
-            exit;
+
+            try {
+                throw new Exception('Das Startdatum muss vor dem Einzugsdatum '. date('d.m.Y', $timestampEinzug). ' liegen');
+            } catch (Exception $e) {
+                echo "Fehler: " . $e->getMessage(); // Stacktrace wird nicht ausgegeben
+                exit;
+            }
         }
         if ($timestampEinzug > $endDatum) {
-            throw new Exception("Das Statdatum muss vor dem Einzugsdatum ". date('d.m.Y', $timestampEinzug). ' liegen');
-            exit;           
+            try {
+                throw new Exception('Das Endatum muss vor dem Einzugsdatum '. date('d.m.Y', $timestampEinzug). ' liegen');
+            } catch (Exception $e) {
+                echo "Fehler: " . $e->getMessage(); // Stacktrace wird nicht ausgegeben
+                exit;
+            }
         }
 
         IPS_LogMessage('einzug', date('d.m.Y H:i:s', $timestampEinzug));
