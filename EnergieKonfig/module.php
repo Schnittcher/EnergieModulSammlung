@@ -52,7 +52,7 @@ class EnergieKonfig extends IPSModule {
         }
         if ($timestampEinzug > $startDatum) {
             $startDatum = $timestampEinzug;
-            $this->LogMessage('Anfrage von Energiedaten vor Einzug ('.$WohnungsID.')');
+            $this->LogMessage('Anfrage von Energiedaten vor Einzug ('.$WohnungsID.')', KL_WARNING);
         }
 
         IPS_LogMessage('einzug', date('d.m.Y H:i:s', $timestampEinzug));
