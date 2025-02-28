@@ -52,13 +52,13 @@ class EnergieKonfig extends IPSModule {
         }
         if ($timestampEinzug > $startDatum) {
             echo "Das Endatum muss vor dem Einzugsdatum ". date('d.m.Y', $timestampEinzug). ' liegen';
-            return;
+            return [];
             $startDatum = $timestampEinzug;
             $this->LogMessage('Anfrage von Energiedaten vor Einzug (StartDatum) ('.$WohnungsID.')', KL_WARNING);
         }
         if ($timestampEinzug > $endDatum) {
             echo "Das Endatum muss vor dem Einzugsdatum ". date('d.m.Y', $timestampEinzug). ' liegen';
-            return;
+            return [];
             $endDatum = $timestampEinzug;
             $this->LogMessage('Anfrage von Energiedaten vor Einzug (EndDatum) ('.$WohnungsID.')', KL_WARNING);
             
