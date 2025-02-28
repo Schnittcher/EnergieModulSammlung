@@ -46,6 +46,7 @@ class EnergieKonfig extends IPSModule {
             }
         }
       
+        echo $WohnungsID;
         if ($timestampEinzug === false) {
             echo "Ungültiges Einzugsdatum";
             return;
@@ -67,10 +68,6 @@ class EnergieKonfig extends IPSModule {
                 exit;
             }
         }
-
-        IPS_LogMessage('einzug', date('d.m.Y H:i:s', $timestampEinzug));
-        IPS_LogMessage('start', date('d.m.Y H:i:s', $startDatum));
-        IPS_LogMessage('ende', date('d.m.Y H:i:s', $endDatum));
 
         $data = AC_GetAggregatedValues($archiveID, $variableID, $aggregationsStufe, $startDatum, $endDatum, $limit);
         return $data;
