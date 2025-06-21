@@ -14,7 +14,7 @@ define('LOD_DATETIME', 2);
             //Never delete this line!
             parent::Create();
 
-            $this->ReadPropertyString('WohnungsID','');
+            $this->RegisterPropertyString('WohnungsID','');
             $this->RegisterPropertyInteger('Zählernummer', 0);
             $this->RegisterPropertyInteger('Verbrauch', 0);
             $this->RegisterPropertyInteger('VerbrauchDurchschnitt', 0);
