@@ -295,6 +295,8 @@ define('LOD_DATETIME', 2);
 
         //TODO Funktion gegen die originale austauschen
         private function GetAggregatedValues($variableID, $aggregation, $startDate, $endDate, $limit) {
+            $this->SendDebug('Start Datum',$startDate,0);
+            $this->SendDebug('End Datum',$endDate,0);
             $WohnungsID = $this->ReadPropertyString('WohnungsID');
             $EnergieKonfigInstanz = $this->ReadPropertyInteger('EnergieKonfigInstanz');
             $acID = IPS_GetInstanceListByModuleID('{43192F0B-135B-4CE7-A0A7-1475603F3060}')[0];
