@@ -20,6 +20,8 @@ define('LOD_DATETIME', 2);
             $this->RegisterPropertyInteger('AbweichungProzentual', 0);
 
             $this->RegisterPropertyInteger('LevelOfDetail', 0);
+            $this->RegisterPropertyBoolean('EnergieKonfig',false);
+            $this->RegisterPropertyInteger('EnergieKonfigInstanz', 0);
 
             $this->RegisterMessage(0, IPS_KERNELMESSAGE);
         }
@@ -288,4 +290,19 @@ define('LOD_DATETIME', 2);
                 $this->SetStatus(102);
             }
         }
+
+
+        //TODO Funktion gegen die originale austauschen
+        private function GetAggregatedValues($variableID, $aggregation, $startDate, $endDate) {
+            $EnergieKonfigInstanz = $this->ReadPropertyInteger('EnergieKonfigInstanz');
+            $acID = IPS_GetInstanceListByModuleID('{43192F0B-135B-4CE7-A0A7-1475603F3060}')[0];
+            if ($this->ReadPropertyBoolean('EnergieKonfig')) {
+                if ($EnergieKonfigInstanz == 0) {
+                    $EnergieKonfigInstanz = IPS_GetInstanceListByModuleID('{3BE56E7A-C2AC-91A9-0A0D-397C4345B065}')[0];
+            }
+            return VER_GetLoggedValues($EnergieKonfigInstanz, $variableID, $aggregation, $WohnungsID, $startDate, $endDate, null);
+            }
+            return AC_GetAggregatedValues($acID, $variableID, $aggregation, $startDate, $endDate, 0);
+        }
+    
     }

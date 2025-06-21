@@ -38,6 +38,16 @@
                     "value": 2
                 }
             ]
+        },
+        {
+            "type": "CheckBox",
+            "name": "EnergieKonfig",
+            "caption": "Nutze EnergieKonfig Instanz für Archivdaten"
+        },
+        {
+            "type": "SelectInstance",
+            "name": "EnergieKonfigInstanz",
+            "caption": "EnergieKonfig Instanz"
         }
     ],
     "status": [
