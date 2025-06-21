@@ -1,6 +1,11 @@
 {
     "elements": [
         {
+            "name": "WohnungsID",
+            "type": "ValidationTextBox",
+            "caption": "Wohnungs ID"
+        },
+        {
             "name": "Zählernummer",
             "type": "SelectVariable",
             "caption": "Zählernummer"

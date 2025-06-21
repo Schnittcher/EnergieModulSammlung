@@ -14,6 +14,7 @@ define('LOD_DATETIME', 2);
             //Never delete this line!
             parent::Create();
 
+            $this->ReadPropertyString('WohnungsID','');
             $this->RegisterPropertyInteger('Zählernummer', 0);
             $this->RegisterPropertyInteger('Verbrauch', 0);
             $this->RegisterPropertyInteger('VerbrauchDurchschnitt', 0);
@@ -294,6 +295,7 @@ define('LOD_DATETIME', 2);
 
         //TODO Funktion gegen die originale austauschen
         private function GetAggregatedValues($variableID, $aggregation, $startDate, $endDate) {
+            $WohnungsID = $this->ReadPropertyString('WohnungsID');
             $EnergieKonfigInstanz = $this->ReadPropertyInteger('EnergieKonfigInstanz');
             $acID = IPS_GetInstanceListByModuleID('{43192F0B-135B-4CE7-A0A7-1475603F3060}')[0];
             if ($this->ReadPropertyBoolean('EnergieKonfig')) {
