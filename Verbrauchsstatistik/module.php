@@ -120,6 +120,7 @@ define('LOD_DATETIME', 2);
                 $startDate = strtotime(date('d.m.Y 00:00:00', $startDate), $startDate);
                 $endDate = strtotime(date('d.m.Y 23:59:59', $endDate), $endDate);
             }
+            $this->SendDebug('Start Datum Calculate',$startDate,0);
 
             if (($startDate == $endDate) || ($startDate > $endDate)) {
                 $this->SetValue($Ident, 0);
@@ -129,24 +130,24 @@ define('LOD_DATETIME', 2);
             $values = [];
             $sum = 0;
             if ($levelOfDetail == LOD_DATE) {
-                $values = array_merge($values, $this->GetAggregatedValues($acID, $variableID, 1 /* Day */, $startDate, $endDate, 0));
+                $values = array_merge($values, $this->GetAggregatedValues($variableID, 1 /* Day */, $startDate, $endDate, 0));
             //Check if startDate/endDate are in the same hour
             } elseif (date('d.m.Y H', $startDate) == date('d.m.Y H', $endDate)) {
-                $values = array_merge($values, $this->GetAggregatedValues($acID, $variableID, 6 /* Minutes */, $startDate, $endDate, 0));
+                $values = array_merge($values, $this->GetAggregatedValues($variableID, 6 /* Minutes */, $startDate, $endDate, 0));
             } else {
                 //FirstMinutes
                 $this->SendDebug('FirstMinutsStart', date('H:i:s', $startDate), 0);
                 //StartDate at H:59:59
                 $firstMinutesEnd = strtotime(date('H', $startDate) . ':59:59', $startDate);
                 $this->SendDebug('FirstMinutsEnd', date('H:i:s', $firstMinutesEnd), 0);
-                $values = array_merge($values, $this->GetAggregatedValues($acID, $variableID, 6 /* Minutes */, $startDate, $firstMinutesEnd, 0));
+                $values = array_merge($values, $this->GetAggregatedValues($variableID, 6 /* Minutes */, $startDate, $firstMinutesEnd, 0));
 
                 //LastMinutes
                 //Full hour of endDate
                 $lastMinutesStart = strtotime(date('H', $endDate) . ':00:00', $endDate);
                 $this->SendDebug('LastMinutsStart', date('H:i:s', $lastMinutesStart), 0);
                 $this->SendDebug('LastMinutsEnd', date('H:i:s', $endDate), 0);
-                $values = array_merge($values, $this->GetAggregatedValues($acID, $variableID, 6 /* Minutes */, $lastMinutesStart, $endDate, 0));
+                $values = array_merge($values, $this->GetAggregatedValues( $variableID, 6 /* Minutes */, $lastMinutesStart, $endDate, 0));
 
                 //FirstHour start/end
                 $hoursStart = $firstMinutesEnd + 1;
@@ -155,28 +156,28 @@ define('LOD_DATETIME', 2);
                     //Hours
                     $this->SendDebug('StartHours', date('H:i:s', $hoursStart), 0);
                     $this->SendDebug('EndHours', date('H:i:s', $hoursEnd), 0);
-                    $values = array_merge($values, $this->GetAggregatedValues($acID, $variableID, 0 /* Hour */, $hoursStart, $hoursEnd, 0));
+                    $values = array_merge($values, $this->GetAggregatedValues($variableID, 0 /* Hour */, $hoursStart, $hoursEnd, 0));
                 } else {
                     //FirstHours
                     $this->SendDebug('FirstHoursStart', date('d.m.Y H:i:s', $hoursStart), 0);
                     //23:59:59 on startDate
                     $firstHoursEnd = strtotime('23:59:59', $startDate);
                     $this->SendDebug('FirstHoursEnd', date('d.m.Y H:i:s', $firstHoursEnd), 0);
-                    $values = array_merge($values, $this->GetAggregatedValues($acID, $variableID, 0 /* Hour */, $hoursStart, $firstHoursEnd, 0));
+                    $values = array_merge($values, $this->GetAggregatedValues($variableID, 0 /* Hour */, $hoursStart, $firstHoursEnd, 0));
 
                     //LastHours
                     //00:00:00 on endDate
                     $lastHoursStart = strtotime('00:00:00', $endDate);
                     $this->SendDebug('LastHoursStart', date('d.m.Y H:i:s', $lastHoursStart), 0);
                     $this->SendDebug('LastHoursEnd', date('d.m.Y H:i:s', $hoursEnd), 0);
-                    $values = array_merge($values, $this->GetAggregatedValues($acID, $variableID, 0 /* Hour */, $lastHoursStart, $hoursEnd, 0));
+                    $values = array_merge($values, $this->GetAggregatedValues($variableID, 0 /* Hour */, $lastHoursStart, $hoursEnd, 0));
 
                     //Days
                     $daysStart = $firstHoursEnd + 1;
                     $this->SendDebug('StartDays', date('d.m.Y H:i:s', $daysStart), 0);
                     $daysEnd = $lastHoursStart - 1;
                     $this->SendDebug('EndDays', date('d.m.Y H:i:s', $daysEnd), 0);
-                    $values = array_merge($values, $this->GetAggregatedValues($acID, $variableID, 1 /* Day */, $daysStart, $daysEnd, 0));
+                    $values = array_merge($values, $this->GetAggregatedValues($variableID, 1 /* Day */, $daysStart, $daysEnd, 0));
                 }
             }
 
