@@ -300,7 +300,7 @@ define('LOD_DATETIME', 2);
             $this->SendDebug('Start Datum',$startDate,0);
             $this->SendDebug('End Datum',$endDate,0);
             $WohnungsID = $this->ReadPropertyString('WohnungsID');
-            $MieterID = $this->ReadPropertyString('MieterID');
+            $MieterID = $this->ReadPropertyInteger('MieterID');
             $EnergieKonfigInstanz = $this->ReadPropertyInteger('EnergieKonfigInstanz');
             $acID = IPS_GetInstanceListByModuleID('{43192F0B-135B-4CE7-A0A7-1475603F3060}')[0];
             if ($this->ReadPropertyBoolean('EnergieKonfig')) {
