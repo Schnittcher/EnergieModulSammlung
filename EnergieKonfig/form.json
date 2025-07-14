@@ -101,15 +101,6 @@
                     }
                 },
                 {
-                    "caption": "Einzugsdatum",
-                    "name": "Einzugsdatum",
-                    "width": "250px",
-                    "add": "{}",
-                    "edit": {
-                        "type": "SelectDate"
-                    }
-                },
-                {
                     "label": "List",
                     "name": "MieterList",
                     "width": "400px",
