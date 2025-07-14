@@ -40,7 +40,7 @@
         {
             "type": "List",
             "name": "Wohnungen",
-            "Caption": "Wohnung inkl. Mieterdaten",
+            "caption": "Wohnung inkl. Mieterdaten",
             "add": true,
             "delete": true,
             "sort": {
