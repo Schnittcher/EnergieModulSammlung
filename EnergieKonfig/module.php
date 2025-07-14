@@ -71,7 +71,7 @@ class EnergieKonfig extends IPSModule {
             }
         }
 
-        if ($timestampAuszug > $startDatum) {
+        if ($timestampAuszug < $startDatum) {
 
             try {
                 throw new Exception('Das Startdatum muss vor dem Auszugsdatum '. date('d.m.Y', $timestampAuszug). ' liegen');
