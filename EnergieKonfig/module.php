@@ -42,7 +42,7 @@ class EnergieKonfig extends IPSModule {
         foreach ($Wohnungen as $Wohnung) {
             if ($Wohnung['Name'] == $WohnungsID) {
                 foreach ($Wohnung['MieterList'] as $Mieter) {
-                    if ($MieterID == $Mieter['ID']) {
+                    if ($MieterID == $Mieter['MieterID']) {
                         $einzugsDatum = json_decode($Mieter['Einzugsdatum'],true);
                         $timestampEinzug = strtotime($einzugsDatum['day'].'.'.$einzugsDatum['month'].'.'.$einzugsDatum['year']);
 
