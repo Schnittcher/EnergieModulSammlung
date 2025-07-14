@@ -5,7 +5,7 @@
             "Value": "Wert",
             "First reading of the day": "Erster Wert des Tages",
             "Last reading of the day": "Letzter Wert des Tages",
-            "Reading (Day) Moving in / ot": "Zählerstand (Tag) Ein- / Auszug",      
+            "Reading (Day) Moving in / out": "Zählerstand (Tag) Ein- / Auszug",      
             "https://www.symcon.de/en/service/documentation/module-reference/reading-day/": "https://www.symcon.de/de/service/dokumentation/modulreferenz/zaehlerstand-tag/",
             "ReadingDay": "ZaehlerstandTag"
         }
