@@ -309,7 +309,7 @@ define('LOD_DATETIME', 2);
             }
             return VER_GetLoggedValues($EnergieKonfigInstanz, $variableID, $aggregation, $WohnungsID, $MieterID, $startDate, $endDate, $limit);
             }
-            echo $variableID;
+            IPS_LogMessage('var',$variableID);
             return AC_GetAggregatedValues($acID, $variableID, $aggregation, $startDate, $endDate, $limit);
         }
     
