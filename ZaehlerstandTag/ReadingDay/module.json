@@ -1,0 +1,14 @@
+{
+    "id": "{F810A394-4C16-5DEF-F023-0A5A3F4F2CDB}",
+    "name": "ReadingDay",
+    "type": 3,
+    "vendor": "",
+    "aliases": [
+        "Reading (Day)"
+    ],
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "ZST",
+    "url": "https://www.symcon.de/en/service/documentation/module-reference/reading-day/"
+}

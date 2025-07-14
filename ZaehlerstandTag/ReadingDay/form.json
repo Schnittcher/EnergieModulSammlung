@@ -1,0 +1,44 @@
+{
+    "elements": [
+        {
+            "name": "WohnungsID",
+            "type": "ValidationTextBox",
+            "caption": "Wohnungs ID"
+        },
+        {
+            "name": "MieterID",
+            "type": "NumberSpinner",
+            "caption": "Mieter ID"
+        },
+        {
+            "name": "SourceVariable",
+            "type": "SelectVariable",
+            "caption": "Source"
+        },
+        {
+            "name": "ValueType",
+            "type": "Select",
+            "caption": "Value",
+            "options": [
+                {
+                    "caption": "First reading of the day",
+                    "value": 0
+                },
+                {
+                    "caption": "Last reading of the day",
+                    "value": 1
+                }
+            ]
+        },
+                {
+            "type": "CheckBox",
+            "name": "EnergieKonfig",
+            "caption": "Nutze EnergieKonfig Instanz für Archivdaten"
+        },
+        {
+            "type": "SelectInstance",
+            "name": "EnergieKonfigInstanz",
+            "caption": "EnergieKonfig Instanz"
+        }
+    ]
+}

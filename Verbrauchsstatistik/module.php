@@ -307,7 +307,7 @@ define('LOD_DATETIME', 2);
                 if ($EnergieKonfigInstanz == 0) {
                     $EnergieKonfigInstanz = IPS_GetInstanceListByModuleID('{3BE56E7A-C2AC-91A9-0A0D-397C4345B065}')[0];
             }
-            return VER_GetLoggedValues($EnergieKonfigInstanz, $variableID, $aggregation, $WohnungsID, $MieterID, $startDate, $endDate, $limit);
+            return VER_GetAggregatedValues($EnergieKonfigInstanz, $variableID, $aggregation, $WohnungsID, $MieterID, $startDate, $endDate, $limit);
             }
             return AC_GetAggregatedValues($acID, $variableID, $aggregation, $startDate, $endDate, $limit);
         }
