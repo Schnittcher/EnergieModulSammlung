@@ -15,6 +15,7 @@ define('LOD_DATETIME', 2);
             parent::Create();
 
             $this->RegisterPropertyString('WohnungsID','');
+            $this->RegisterPropertyInteger('MieterID',0);
             $this->RegisterPropertyInteger('Zählernummer', 0);
             $this->RegisterPropertyInteger('Verbrauch', 0);
             $this->RegisterPropertyInteger('VerbrauchDurchschnitt', 0);
@@ -299,13 +300,14 @@ define('LOD_DATETIME', 2);
             $this->SendDebug('Start Datum',$startDate,0);
             $this->SendDebug('End Datum',$endDate,0);
             $WohnungsID = $this->ReadPropertyString('WohnungsID');
+            $MieterID = $this->ReadPropertyString('MieterID');
             $EnergieKonfigInstanz = $this->ReadPropertyInteger('EnergieKonfigInstanz');
             $acID = IPS_GetInstanceListByModuleID('{43192F0B-135B-4CE7-A0A7-1475603F3060}')[0];
             if ($this->ReadPropertyBoolean('EnergieKonfig')) {
                 if ($EnergieKonfigInstanz == 0) {
                     $EnergieKonfigInstanz = IPS_GetInstanceListByModuleID('{3BE56E7A-C2AC-91A9-0A0D-397C4345B065}')[0];
             }
-            return VER_GetLoggedValues($EnergieKonfigInstanz, $variableID, $aggregation, $WohnungsID, $startDate, $endDate, $limit);
+            return VER_GetLoggedValues($EnergieKonfigInstanz, $variableID, $aggregation, $WohnungsID, $MieterID, $startDate, $endDate, $limit);
             }
             return AC_GetAggregatedValues($acID, $variableID, $aggregation, $startDate, $endDate, $limit);
         }

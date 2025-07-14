@@ -29,7 +29,7 @@ class EnergieKonfig extends IPSModule {
     }
 
 
-    public function GetLoggedValues(int $variableID, $aggregationsStufe, $WohnungsID, $startDatum, $endDatum, $limit) {
+    public function GetLoggedValues(int $variableID, $aggregationsStufe, $WohnungsID, $MieterID, $startDatum, $endDatum, $limit) {
 
         if ($this->ReadPropertyInteger('PropertyInstanceID') == 0) {
             $archiveID = IPS_GetInstanceListByModuleID('{43192F0B-135B-4CE7-A0A7-1475603F3060}')[0];
@@ -41,13 +41,24 @@ class EnergieKonfig extends IPSModule {
 
         foreach ($Wohnungen as $Wohnung) {
             if ($Wohnung['Name'] == $WohnungsID) {
-                $einzugsDatum = json_decode($Wohnung['Einzugsdatum'],true);
-                $timestampEinzug = strtotime($einzugsDatum['day'].'.'.$einzugsDatum['month'].'.'.$einzugsDatum['year']);
+                foreach ($Wohnung['MieterList'] as $Mieter) {
+                    if ($MieterID == $Mieter['ID']) {
+                        $einzugsDatum = json_decode($Mieter['Einzugsdatum'],true);
+                        $timestampEinzug = strtotime($einzugsDatum['day'].'.'.$einzugsDatum['month'].'.'.$einzugsDatum['year']);
+
+                        $auszugsDatum = json_decode($Mieter['Auszugsdatum'],true);
+                        $timestampAuszug = strtotime($auszugsDatum['day'].'.'.$auszugsDatum['month'].'.'.$auszugsDatum['year']);
+                    }
+                 }
             }
         }
       
         if ($timestampEinzug === false) {
             echo "Ungültiges Einzugsdatum";
+            return;
+        }
+        if ($timestampAuszug === false) {
+            echo "Ungültiges Auszugsdatum";
             return;
         }
         if ($timestampEinzug > $startDatum) {
@@ -59,6 +70,17 @@ class EnergieKonfig extends IPSModule {
                 exit;
             }
         }
+
+        if ($timestampAuszug > $startDatum) {
+
+            try {
+                throw new Exception('Das Startdatum muss vor dem Auszugsdatum '. date('d.m.Y', $timestampAuszug). ' liegen');
+            } catch (Exception $e) {
+                echo "Fehler: " . $e->getMessage(); // Stacktrace wird nicht ausgegeben
+                exit;
+            }
+        }
+
         if ($timestampEinzug > $endDatum) {
             try {
                 throw new Exception('Das Endatum muss vor dem Einzugsdatum '. date('d.m.Y', $timestampEinzug). ' liegen');
@@ -68,7 +90,22 @@ class EnergieKonfig extends IPSModule {
             }
         }
 
+        if ($timestampAuszug > $endDatum) {
+            try {
+                throw new Exception('Das Endatum muss vor dem Auszugsdatum '. date('d.m.Y', $timestampAuszug). ' liegen');
+            } catch (Exception $e) {
+                echo "Fehler: " . $e->getMessage(); // Stacktrace wird nicht ausgegeben
+                exit;
+            }
+        }
+
         $data = AC_GetAggregatedValues($archiveID, $variableID, $aggregationsStufe, $startDatum, $endDatum, $limit);
         return $data;
     }
+
+    
+        
+
+
+
 }

@@ -3,7 +3,7 @@
     "name": "Verbrauchsstatistik",
     "type": 3,
     "vendor": "Kai Schnittcher",
-    "aliases": [],
+    "aliases": ["Verbrauchsstatistik Ein-/Auszug"],
     "parentRequirements": [],
     "childRequirements": [],
     "implemented": [],

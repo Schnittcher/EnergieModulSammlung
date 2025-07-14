@@ -1,6 +1,10 @@
 {
     "elements": [
-        { "type": "SelectInstance", "name": "PropertyInstanceID", "caption": "Target" },
+        {
+            "type": "SelectInstance",
+            "name": "PropertyInstanceID",
+            "caption": "Target"
+        },
         {
             "type": "List",
             "name": "Zaehler",
@@ -34,6 +38,12 @@
         {
             "type": "List",
             "name": "Wohnungen",
+            "add": true,
+            "delete": true,
+            "sort": {
+                "column": "Name",
+                "direction": "ascending"
+            },
             "columns": [
                 {
                     "caption": "Name",
@@ -98,14 +108,65 @@
                     "edit": {
                         "type": "SelectDate"
                     }
+                },
+                {
+                    "label": "List",
+                    "name": "MieterList",
+                    "width": "400px",
+                    "edit": {
+                        "type": "List",
+                        "caption": "Embedded List",
+                        "rowCount": 5,
+                        "add": true,
+                        "delete": false,
+                        "columns": [
+                            {
+                                "caption": "MieterID",
+                                "name": "MieterID",
+                                "width": "auto",
+                                "add": "",
+                                "edit": {
+                                    "type": "ValidationTextBox"
+                                }
+                            },
+                            {
+                                "caption": "Mieter",
+                                "name": "Mieter",
+                                "width": "auto",
+                                "add": "",
+                                "edit": {
+                                    "type": "ValidationTextBox"
+                                }
+                            },
+                            {
+                                "label": "Einzugsdatum",
+                                "name": "Einzugsdatum",
+                                "width": "250px",
+                                "add": "{}",
+                                "edit": {
+                                    "type": "SelectDate"
+                                }
+                            },
+                            {
+                                "label": "Auszugsdatum",
+                                "name": "Auszugsdatum",
+                                "width": "250px",
+                                "add": "{}",
+                                "edit": {
+                                    "type": "SelectDate"
+                                }
+                            }
+                        ]
+                    },
+                    "add": [
+                        {
+                            "Mieter": "",
+                            "Einzugsdatum": "{}",
+                            "Auszugsdatum": "{}"
+                        }
+                    ]
                 }
-            ],
-            "add": true,
-            "delete": true,
-            "sort": {
-                "column": "Name",
-                "direction": "ascending"
-            }
+            ]
         }
     ]
 }

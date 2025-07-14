@@ -6,6 +6,11 @@
             "caption": "Wohnungs ID"
         },
         {
+            "name": "MieterID",
+            "type": "ValidationTextBox",
+            "caption": "Mieter ID"
+        },
+        {
             "name": "Zählernummer",
             "type": "SelectVariable",
             "caption": "Zählernummer"
