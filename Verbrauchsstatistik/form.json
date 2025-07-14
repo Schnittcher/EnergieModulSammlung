@@ -7,7 +7,7 @@
         },
         {
             "name": "MieterID",
-            "type": "ValidationTextBox",
+            "type": "NumberSpinner",
             "caption": "Mieter ID"
         },
         {
