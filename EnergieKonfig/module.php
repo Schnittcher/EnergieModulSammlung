@@ -99,7 +99,7 @@ class EnergieKonfig extends IPSModule {
             }
         }
 
-        $data = AC_GetLoggeddValues($archiveID, $variableID, $startDatum, $endDatum, $limit);
+        $data = AC_GetLoggedValues($archiveID, $variableID, $startDatum, $endDatum, $limit);
         return $data;
     }
 
