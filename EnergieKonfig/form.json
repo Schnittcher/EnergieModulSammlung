@@ -3,11 +3,13 @@
         {
             "type": "SelectInstance",
             "name": "PropertyInstanceID",
+            "visible": false,
             "caption": "Target"
         },
         {
             "type": "List",
             "name": "Zaehler",
+            "visible": false,
             "columns": [
                 {
                     "caption": "Name",
@@ -38,6 +40,7 @@
         {
             "type": "List",
             "name": "Wohnungen",
+            "Caption": "Wohnung inkl. Mieterdaten",
             "add": true,
             "delete": true,
             "sort": {
