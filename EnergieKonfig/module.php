@@ -64,7 +64,7 @@ class EnergieKonfig extends IPSModule {
         if ($timestampEinzug > $startDatum) {
 
             try {
-                throw new Exception('Das Startdatum muss vor dem Einzugsdatum '. date('d.m.Y', $timestampEinzug). ' liegen');
+                throw new Exception('Das Startdatum' . date('d.m.Y', $startDatum). ' muss vor dem Einzugsdatum '. date('d.m.Y', $timestampEinzug). ' liegen');
             } catch (Exception $e) {
                 echo "Fehler: " . $e->getMessage(); // Stacktrace wird nicht ausgegeben
                 exit;
