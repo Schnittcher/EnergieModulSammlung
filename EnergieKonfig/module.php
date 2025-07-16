@@ -57,6 +57,10 @@ class EnergieKonfig extends IPSModule {
             echo "Ungültiges Einzugsdatum";
             return;
         }
+        if ($startDatum === 0) {
+            $startDatum = $timestampEinzug;
+
+        }
         if ($timestampAuszug === false) {
             echo "Ungültiges Auszugsdatum";
             return;
